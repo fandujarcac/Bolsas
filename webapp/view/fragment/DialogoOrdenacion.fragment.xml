@@ -1,0 +1,16 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<ViewSettingsDialog confirm=".onOrdenar">
+		<sortItems>
+			<ViewSettingsItem text="Orden" key="Orden" selected="true"/>
+			<ViewSettingsItem text="Apellido1" key="Apellido1"/>
+			<ViewSettingsItem text="Apellido2" key="Apellido2"/>
+			<ViewSettingsItem text="Nombre" key="Nombre"/>
+			<ViewSettingsItem text="Registro Entrada" key="NumOrden"/>
+		</sortItems>
+		<!--// Para agrupar -->
+		<groupItems>
+			<ViewSettingsItem text="Bolsa" key="TextoBolsa"/>
+			<ViewSettingsItem text="Puesto" key="TextoPuesto"/>
+		</groupItems>
+	</ViewSettingsDialog>
+</core:FragmentDefinition>

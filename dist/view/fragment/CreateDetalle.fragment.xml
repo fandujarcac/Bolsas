@@ -1,0 +1,54 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core">
+	<VBox class="sapUiSmallMargin">
+		<items>
+			<f:SimpleForm id="SimpleFormDisplay354wide" editable="false" layout="ResponsiveGridLayout" title="Registro Nº: {Ejercicio} {NumOrden}" labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0" emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false">
+				<f:content>
+					<Toolbar xmlns="sap.m" ariaLabelledBy="Title1">
+						<Title id="Title1" text="Datos Personales" level="H5" titleStyle="H4"/>
+					</Toolbar>
+					<Label xmlns="sap.m" text="Primer Apellido"/>
+					<Input xmlns="sap.m" value="{Apellido1}" id="inputApellido1"/>
+					<Label xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core" xmlns="sap.m" text="Segundo Apellido" id="label8"/>
+					<Input xmlns="sap.m" value="{Apellido2}" id="inputApellido2"/>
+					<Label xmlns="sap.m" text="Nombre"/>
+					<Input xmlns="sap.m" value="{Nombre}" id="inputNombre"/>
+					<Label xmlns="sap.m" text="NIF"/>
+					<Input xmlns="sap.m" value="{Nif}" id="inputNif"/>
+					<Label xmlns="sap.m" text="Teléfono"/>
+					<Input xmlns="sap.m" value="{Telefono}" id="inputTelefono"/>
+					<Label xmlns="sap.m" text="eMail"/>
+					<Input xmlns="sap.m" value="{Email}" id="inputEmail"/>
+					
+					<Toolbar xmlns="sap.m" class="sapUiSmallMargin" ariaLabelledBy="Title3">
+						<Title id="Title3" text="Puntuaciones" titleStyle="H4"/>
+					</Toolbar>
+
+				</f:content>
+			</f:SimpleForm>
+			<core:Icon src="sap-icon://customer-history" size="2em" id="icon0"/>
+			<Label text="Tiempo Trabajado" labelFor="inputTiempo"/>
+			<Input
+				id="inputTiempo"
+				type="Number"
+				class="sapUiSmallMarginBottom"
+				placeholder="Tiempo trabajado ..." 
+				value="{SubTiempo}"/>
+			
+		</items>
+		<l:Grid id="grid0">
+			<l:content>
+				<Input xmlns="sap.m" value="Value" id="input0"/>
+				<ObjectListItem title="Tiempo Trabajado" number="{SubTiempo}" numberUnit="Puntos" intro="Category" icon="sap-icon://customer-history" id="item0"/>
+				<ObjectListItem title="Títulos" number="{SubTitulos}" numberUnit="Puntos" intro="Category" icon="sap-icon://study-leave" id="item1"/>
+				<ObjectListItem title="Formación" number="{SubFormacion}" numberUnit="Puntos" intro="Category" icon="sap-icon://learning-assistant" id="item2"/>
+				<ObjectListItem title="Idiomas" number="{SubIdiomas}" numberUnit="Puntos" intro="Category" icon="sap-icon://leads" id="item3"/>
+			</l:content>
+		</l:Grid>
+		<l:Grid id="grid1">
+			<l:content>
+				<ObjectListItem title="Total Candidato" number="{PuntuacionTotal}" numberUnit="Puntos" intro="Introducido Solicitante" icon="sap-icon://work-history" id="itemTot" selected="true"/>
+			    <ObjectListItem title="Total Revisado" number="{TotalRevisado}" numberUnit="Puntos" intro="Revisado CAC" icon="sap-icon://work-history" id="TotRev" selected="true"/>
+			</l:content>
+		</l:Grid>
+	</VBox>
+</core:FragmentDefinition>

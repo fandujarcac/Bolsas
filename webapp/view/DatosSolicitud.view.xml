@@ -1,0 +1,11 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="es.cac.bolsa.BolsaTrabajoPublicada0920.controller.DatosSolicitud">
+
+			<Page title="Datos Solicitud: {Apellido1}{Apellido2},{Nombre}" showNavButton="true" navButtonPress="onNavBack" navButtonType="Default" xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" cd:w5g.dt.context="/ZSolicitantePublicadoSet">
+				<content>
+					
+				<DisplayListItem type="Navigation" label="Publicado: {FechaPublic}" value="Revisado: {TotalRevisado}" id="item0"/>
+					
+				</content>
+			</Page>
+
+</mvc:View>

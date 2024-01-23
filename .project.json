@@ -1,0 +1,6 @@
+{
+  "deploy": {
+    "destination": "DES",
+    "name": "ZUI5_BOLSA_0920"
+  }
+}

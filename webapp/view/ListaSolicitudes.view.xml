@@ -1,0 +1,92 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="es.cac.bolsa.BolsaTrabajoPublicada0920.controller.ListaSolicitudes">
+	<Page title="Bolsas de Trabajo CACSA" id="idPageListaSolicitudes" showNavButton="true" navButtonPress="onNavBack">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button xmlns="sap.m" id="button0" icon="sap-icon://nav-back" press="onNavBack"/>
+					<Image src="https://www.cac.es/.resources/cac-module/img/cac_logo_2018.png" height="100px" id="image2" width="auto"/>
+				</contentLeft>
+				<contentMiddle>
+					<Label text="Bolsa de Trabajo {miBolsa>TextoBolsa} " design="Bold" id="idLabelBar"/>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<subHeader>
+			<Toolbar>
+				<SearchField xmlns="sap.m" placeholder="Buscar por ..." id="IdSearchCliente1" search="onSearch" showRefreshButton="true"
+					refreshButtonTooltip="Reiniciar" enableSuggestions="true" liveChange="onSearch"/>
+				<Button xmlns="sap.m" tooltip="Ordenar" id="IdButtonOrdenar11" icon="sap-icon://sort" press=".openDialogoOrdenar"/>
+				<Button xmlns="sap.m" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" text="Crear Solicitud"
+					id="buttonCrear" icon="sap-icon://employee" press="action" action:wiring="\{'press':\{'navigation':\{'routeName':'CreateSolicitud'\}\}\}"
+					visible="false"/>
+			</Toolbar>
+		</subHeader>
+		<footer>
+			<OverflowToolbar>
+				<Label text="Listado de Solicitudes de {miPuesto>TextoPuesto} --&gt; Publicado: {miModeloSolicitantes>DescripcionPublic}" design="Bold"
+					id="idLabelPuesto2"/>
+			</OverflowToolbar>
+		</footer>
+		<content>
+			<!-- <Button xmlns="sap.m" text="Solicitantes" id="button0" activeIcon="sap-icon://account" icon="sap-icon://account" press="action" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" action:wiring="\{'press':\{'navigation':\{'routeName':'Solicitantes'\}\}\}"/> -->
+			<List noDataText="Seleccionando datos....."
+				items="{path : 'miModeloSolicitantes>/', sorter: {path : 'TextoPuesto', group: true} ,groupHeaderFactory: '.getGroupHeader'}" id="idMiLista">
+				<items>
+					<ObjectListItem xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" type="Navigation" class="sapMTextBold"
+						title="{miModeloSolicitantes>Apellido1} {miModeloSolicitantes&gt;Apellido2}, {miModeloSolicitantes>Nombre}"
+						number="{miModeloSolicitantes>TotalPublicado}"
+						intro="{ path: 'miModeloSolicitantes>Orden', formatter: 'es.cac.bolsa.BolsaTrabajoPublicada0920.controller.Formatear.textoOrden' }"
+						id="ObjectList1" selected="true"
+						highlight="{ path: 'miModeloSolicitantes>Status', formatter: 'es.cac.bolsa.BolsaTrabajoPublicada0920.controller.Formatear.status' }"
+						counter="{ path: 'miModeloSolicitantes>Orden', formatter: 'es.cac.bolsa.BolsaTrabajoPublicada0920.controller.Formatear.sinPuesto' }"
+						cd:wiring="\{'press':\{'navigation':\{'routeName':'DatosSolicitud'\}\}\}" press="onDetailPress">
+						<attributes>
+							<ObjectAttribute title="Nº Reg" text="{miModeloSolicitantes>Ejercicio} {miModeloSolicitantes&gt;NumOrden}" id="attribute0"
+								class="sapMTextBold"/>
+							<ObjectAttribute title="" text="{miModeloSolicitantes>TextoBolsa}" id="attribute1"/>
+							<ObjectAttribute title="Estado Solicitud" text="{miModeloSolicitantes>EstadoSolicitud}--&gt;{miModeloSolicitantes>TextoEstadoSoli}"
+								id="attribute2"/>
+						</attributes>
+						<customData key="CustomDAta" value="VAlue"/>
+						<firstStatus>
+							<ObjectStatus text="Baremación -------&gt; {miModeloSolicitantes>Baremacion} - {miModeloSolicitantes>TextoBaremacion}" id="status0"
+								state="{ path: 'miModeloSolicitantes>Baremacion', formatter: 'es.cac.bolsa.BolsaTrabajoPublicada0920.controller.Formatear.statusBaremacion' }"/>
+						</firstStatus>
+						<secondStatus>
+							<ObjectStatus text="{miModeloSolicitantes>TextoPuesto} ----------&gt; {miModeloSolicitantes>Status}" id="status1"
+								state="{ path: 'miModeloSolicitantes>Status', formatter: 'es.cac.bolsa.BolsaTrabajoPublicada0920.controller.Formatear.status' }"/>
+						</secondStatus>
+						<!--
+						<customData>
+							<core:CustomData writeToDom="true" key="color"
+								value="{ path: 'miModeloSolicitantes>Orden', formatter: 'es.cac.bolsa.BolsaTrabajoPublicada0920.controller.Formatear.ColorTextoOrden' }"/>
+						</customData>
+						-->
+						
+					</ObjectListItem>
+				</items>
+				<!--<headerToolbar>
+					<Toolbar width="100%" id="toolbar1">
+						<content>
+							<SearchField xmlns="sap.m" placeholder="Buscar por ..." id="IdSearchCliente" liveChange="onSearch" search="onSearch"/>
+							<Button xmlns="sap.m" tooltip="Ordenar" id="IdButtonOrdenar" icon="sap-icon://sort" press=".openDialogoOrdenar"/>
+						</content>
+					</Toolbar>
+				</headerToolbar> -->
+				<infoToolbar>
+					<Toolbar active="true" id="idToolbar1">
+						<Label text="Listado de Solicitudes de {miPuesto>TextoPuesto}" design="Bold" id="idLabelPuesto"/>
+					</Toolbar>
+				</infoToolbar>
+			</List>
+			<!--<List noDataText="Drop list items here" id="list1" items="{miModeloSolicitantes>/}" mode="SingleSelectMaster" selectionChange=".onPressItem">	
+				<items>
+					<StandardListItem title="{miModeloSolicitantes>Apellido1} {miModeloSolicitantes>Apellido2}, {miModeloSolicitantes>Nombre}"
+						description="Reg: {miModeloSolicitantes>Ejercicio} {miModeloSolicitantes>NumOrden}" icon="sap-icon://employee"
+						activeIcon="sap-icon://employee"/>
+				</items>
+			</List>-->
+		</content>
+	</Page>
+</mvc:View>

@@ -1,0 +1,54 @@
+/* Enter your custom styles here 
+.sapMTextBold div > span {
+    font-size: 10px !important;
+} 
+
+.sapMTextBold div:nth-of-type(1) span {
+	font-size: 30px !important;
+	font-weight: bold;
+}
+
+
+.sapMTextBold div:nth-of-type(1) {
+	font-size: 30px !important;
+	font-weight: bold;
+	color: blue;
+}
+*/
+mark{
+ background-color:#c0ffc8;
+}
+
+/*
+.sapMObjLIntro span{
+	font-size: 20px !important;
+	font-weight: bold;
+	color: blue;
+	
+}
+*/
+
+
+.cssleave-neg .sapMObjLIntro span  {
+/*  font-size: 20px !important;*/
+  font-weight: bold;
+  color: red !important;
+}
+
+.cssleave-pos .sapMObjLIntro span {
+/*  font-size: 20px !important;*/
+  font-weight: bold;	
+  color: green  !important;
+}
+
+
+[data-color='green']{
+  color: green !important; 
+  font-size: 20px !important;
+  font-weight: bold;
+}
+[data-color='red']{
+  color: red !important;
+  font-size: 20px !important;
+  font-weight: bold;
+}

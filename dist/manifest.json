@@ -1,0 +1,199 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "es.cac.bolsa.BolsaTrabajoPublicada0920",
+		"type": "application",
+		"i18n": "i18n/i18n.properties",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"title": "{{appTitle}}",
+		"description": "{{appDescription}}",
+		"sourceTemplate": {
+			"id": "servicecatalog.connectivityComponentForManifest",
+			"version": "0.0.0"
+		},
+		"dataSources": {
+			"ZUI5_BOLSA_TRABAJO_PUB_0920_SRV": {
+				"uri": "/sap/opu/odata/sap/ZUI5_BOLSA_TRABAJO_PUB_0920_SRV/",
+				"type": "OData",
+				"settings": {
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"icons": {
+			"icon": "",
+			"favIcon": "",
+			"phone": "",
+			"phone@2": "",
+			"tablet": "",
+			"tablet@2": ""
+		},
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		},
+		"supportedThemes": [
+			"sap_hcb",
+			"sap_belize"
+		]
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "es.cac.bolsa.BolsaTrabajoPublicada0920.view.App",
+			"type": "XML"
+		},
+		"dependencies": {
+			"minUI5Version": "1.30.0",
+			"libs": {
+				"sap.ui.layout": {},
+				"sap.ui.core": {},
+				"sap.m": {}
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		},
+		"models": {
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "es.cac.bolsa.BolsaTrabajoPublicada0920.i18n.i18n"
+				}
+			},
+			"": {
+				"type": "sap.ui.model.odata.v2.ODataModel",
+				"settings": {
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "ZUI5_BOLSA_TRABAJO_PUB_0920_SRV",
+				"preload": true
+			}
+		},
+		"resources": {
+			"css": [
+				{
+					"uri": "css/style.css"
+				}
+			]
+		},
+		"routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"async": true,
+				"viewPath": "es.cac.bolsa.BolsaTrabajoPublicada0920.view",
+				"controlAggregation": "pages",
+				"controlId": "app",
+				"clearControlAggregation": false
+			},
+			"routes": [
+				{
+					"name": "BolsasPublicadas",
+					"pattern": "",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"BolsasPublicadas"
+					]
+				},
+				{
+					"name": "DatosSolicitud",
+					"pattern": "DatosSolicitud/{UniReg},{Ejercicio},{FechaPublic},{NumOrden},{Nif},{Bolsa},{Puesto}",
+					"target": [
+						"DatosSolicitud"
+					]
+				},
+				{
+					"name": "ListaSolicitudes",
+					"pattern": "ListaSolicitudes/{Ejercicio},{Bolsa},{Puesto},{FechaPublic}",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"ListaSolicitudes"
+					]
+				},
+				{
+					"name": "DetalleSolicitud",
+					"pattern": "DetalleSolicitud/{UniReg},{Ejercicio},{FechaPublic},{NumOrden},{Nif},{Bolsa},{Puesto}",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"DetalleSolicitud"
+					]
+				},
+				{
+					"name": "ListaPuestos",
+					"pattern": "",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"ListaPuestos"
+					]
+				},
+				{
+					"name": "Detalle",
+					"pattern": "Detalle/{UniReg},{Ejercicio},{NumOrden}",
+					"titleTarget": "",
+					"greedy": false,
+					"target": [
+						"Detalle"
+					]
+				}
+			],
+			"targets": {
+				"TargetApp": {
+					"viewType": "XML",
+					"transition": "slide",
+					"clearControlAggregation": false,
+					"viewName": "App",
+					"viewId": "app"
+				},
+				"ListaPuestos": {
+					"viewType": "XML",
+					"viewName": "ListaPuestos"
+				},
+				"ListaSolicitudes": {
+					"viewType": "XML",
+					"viewName": "ListaSolicitudes"
+				},
+				"Detalle": {
+					"viewType": "XML",
+					"viewName": "Detalle"
+				},
+				"DetalleSolicitud": {
+					"viewType": "XML",
+					"viewName": "DetalleSolicitud"
+				},
+				"BolsasPublicadas": {
+					"viewType": "XML",
+					"viewName": "BolsasPublicadas"
+				},
+				"DatosSolicitud": {
+					"viewType": "XML",
+					"viewName": "DatosSolicitud",
+					"viewId": "",
+					"parent": ""
+				}
+			},
+			"additionalData": {
+				"es.cac.bolsa.BolsaTrabajoPublicada0920.view.ListaSolicitudes": {
+					"routeName": "DetalleSolicitud",
+					"entitySet": "/ZSolicitantePublicadoSet"
+				}
+			}
+		}
+	},
+	"sap.platform.abap": {
+		"uri": "/sap/bc/ui5_ui5/sap/zui5_bolsa_0920/dist",
+		"_version": "1.1.0"
+	}
+}

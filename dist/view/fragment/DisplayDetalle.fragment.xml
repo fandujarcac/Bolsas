@@ -1,0 +1,79 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:l="sap.ui.layout" xmlns:f="sap.ui.layout.form" xmlns:core="sap.ui.core"
+	xmlns:si="sap.suite.ui.commons.statusindicator" xmlns:tnt="sap.tnt">
+	<VBox class="sapUiSmallMargin">
+		<items>
+			<f:SimpleForm id="SimpleFormDisplay354wide" editable="false" layout="ResponsiveGridLayout"
+				title="Registro Nº: {ModelSolicitante>/Ejercicio} {ModelSolicitante&gt;/NumOrden}"
+				labelSpanXL="4" labelSpanL="3" labelSpanM="4" labelSpanS="12" adjustLabelSpan="false" emptySpanXL="0" emptySpanL="4" emptySpanM="0"
+				emptySpanS="0" columnsXL="2" columnsL="1" columnsM="1" singleContainerFullSize="false">
+				<f:content>
+					<Toolbar xmlns="sap.m" ariaLabelledBy="Title1">
+						<Title id="Title1" text="Datos Personales" level="H5" titleStyle="H4"/>
+						<ToolbarSpacer/>
+						<Button text="Nº de Orden: {ModelSolicitante>/Orden}"
+							type="{ path: 'ModelSolicitante>/Status', formatter: 'es.cac.bolsa.BolsaTrabajoPublicada0920.controller.Formatear.statusBoton' }"/>
+						<ToolbarSpacer/>
+						<Button text="{ModelSolicitante>/Status}"
+							type="{ path: 'ModelSolicitante>/Status', formatter: 'es.cac.bolsa.BolsaTrabajoPublicada0920.controller.Formatear.statusBoton' }"/>
+					</Toolbar>
+					<Label xmlns="sap.m" text="Apellidos"/>
+					<Text xmlns="sap.m" id="nameText" text="{ModelSolicitante>/Apellido1} {ModelSolicitante&gt;/Apellido2}"/>
+					<Label xmlns="sap.m" text="Nombre"/>
+					<Text xmlns="sap.m" text="{ModelSolicitante>/Nombre}"/>
+					<Label xmlns="sap.m" text="NIF"/>
+					<Text xmlns="sap.m" text="{ModelSolicitante>/Nif}"/>
+					<Label xmlns="sap.m" text="Teléfono"/>
+					<Text xmlns="sap.m" text="{ModelSolicitante>/Telefono}"/>
+					<Label xmlns="sap.m" text="eMail"/>
+					<Text xmlns="sap.m" text="{ModelSolicitante>/Email}"/>
+					<Label xmlns="sap.m" text="Bolsa"/>
+					<Text xmlns="sap.m" text="{ModelSolicitante>/TextoBolsa}"/>
+					<Label xmlns="sap.m" text="Puesto"/>
+					<Text xmlns="sap.m" text="{ModelSolicitante>/TextoPuesto}"/>
+					<Label xmlns="sap.m" text="Observaciones "/>
+					<TextArea xmlns="sap.m" value="{ModelSolicitante>/Observaciones}" rows="6" id="area0" editable="false"
+						placeholder="Observaciones detectadas" showExceededText="true"/>
+					<Label xmlns="sap.m" text="Baremación"/>
+					<MessageStrip text="{ModelSolicitante>/Baremacion} - {ModelSolicitante&gt;/TextoBarema}"
+						type="{ path: 'ModelSolicitante>/Baremacion', formatter: 'es.cac.bolsa.BolsaTrabajoPublicada0920.controller.Formatear.statusBaremacion' }"
+						showIcon="true" showCloseButton="false" class="sapUiMediumMarginBottom"/>
+					<Label xmlns="sap.m" text="Estado Solicitud"/>
+					<MessageStrip text="{ModelSolicitante>/EstadoSolicitud} - {ModelSolicitante>/TextoEstado}" type="Success" showIcon="true"
+						showCloseButton="false" class="sapUiMediumMarginBottom"/>
+					<Label text="Label" width="100%" id="label10"/>
+					<!--<TextArea xmlns="sap.m" value="{EstadoObservacion}" rows="6" id="area1" editable="false" placeholder="Observaciones del estado"
+						showExceededText="true"/>
+					-->
+				</f:content>
+			</f:SimpleForm>
+			<Panel>
+				<headerToolbar>
+					<Toolbar>
+						<Title level="H3" text="Puntuaciones"/>
+					</Toolbar>
+				</headerToolbar>
+				<l:Grid id="grid1">
+					<l:content>
+						<ObjectListItem title="Total Candidato" number="{ModelSolicitante>/PuntuacionTotal}" numberUnit="Puntos" intro="Introducido Solicitante"
+							icon="sap-icon://work-history" id="itemTot" selected="true"/>
+						<ObjectListItem title="Total Revisado" number="{ModelSolicitante>/TotalRevisado}" numberUnit="Puntos" intro="Revisado CAC"
+							icon="sap-icon://commission-check" id="TotRev" selected="true" numberState="Success" type="Active"
+							highlight="{ path: 'ModelSolicitante>/Status', formatter: 'es.cac.bolsa.BolsaTrabajoPublicada0920.controller.Formatear.status' }"/>
+					</l:content>
+				</l:Grid>
+				<l:Grid id="grid0">
+					<l:content>
+						<ObjectListItem title="Tiempo Trabajado" number="{ModelSolicitante>/SubTiempo}" numberUnit="Puntos" intro="Categoría"
+							icon="sap-icon://customer-history" id="item0"/>
+						<ObjectListItem title="Títulos" number="{ModelSolicitante>/SubTitulos}" numberUnit="Puntos" intro="Categoría" icon="sap-icon://study-leave"
+							id="item1"/>
+						<ObjectListItem title="Formación" number="{ModelSolicitante>/SubFormacion}" numberUnit="Puntos" intro="Categoría"
+							icon="sap-icon://learning-assistant" id="item2"/>
+						<ObjectListItem title="Idiomas" number="{ModelSolicitante>/SubIdiomas}" numberUnit="Puntos" intro="Categoría" icon="sap-icon://leads"
+							id="item3"/>
+					</l:content>
+				</l:Grid>
+			</Panel>
+		</items>
+	</VBox>
+</core:FragmentDefinition>

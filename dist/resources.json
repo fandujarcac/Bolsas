@@ -1,0 +1,156 @@
+{
+    "resources": [
+        {
+            "name": "Component-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "Component-preload.js",
+            "merged": true
+        },
+        {
+            "name": "Component.js"
+        },
+        {
+            "name": "controller/App-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/App.controller.js"
+        },
+        {
+            "name": "controller/BolsasPublicadas-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/BolsasPublicadas.controller.js"
+        },
+        {
+            "name": "controller/ControladorBase-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/ControladorBase.js"
+        },
+        {
+            "name": "controller/DatosSolicitud-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/DatosSolicitud.controller.js"
+        },
+        {
+            "name": "controller/Detalle-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Detalle.controller.js"
+        },
+        {
+            "name": "controller/DetalleSolicitud-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/DetalleSolicitud.controller.js"
+        },
+        {
+            "name": "controller/Formatear-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/Formatear.js"
+        },
+        {
+            "name": "controller/ListaPuestos-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/ListaPuestos.controller.js"
+        },
+        {
+            "name": "controller/ListaSolicitudes-dbg.controller.js",
+            "isDebug": true
+        },
+        {
+            "name": "controller/ListaSolicitudes.controller.js"
+        },
+        {
+            "name": "css/style-dbg.css",
+            "isDebug": true
+        },
+        {
+            "name": "css/style.css"
+        },
+        {
+            "name": "di.code-validation.core_issues.json"
+        },
+        {
+            "name": "extended_runnable_file.html"
+        },
+        {
+            "name": "i18n/i18n.properties",
+            "raw": "i18n/i18n.properties"
+        },
+        {
+            "name": "index.html"
+        },
+        {
+            "name": "index_web.html"
+        },
+        {
+            "name": "manifest-bundle.zip"
+        },
+        {
+            "name": "manifest.json"
+        },
+        {
+            "name": "model/models-dbg.js",
+            "isDebug": true
+        },
+        {
+            "name": "model/models.js"
+        },
+        {
+            "name": "neo-app.json"
+        },
+        {
+            "name": "sap-ui-cachebuster-info.json"
+        },
+        {
+            "name": "view/App.view.xml"
+        },
+        {
+            "name": "view/BolsasPublicadas.view.xml"
+        },
+        {
+            "name": "view/CopyOfMain.view.xml"
+        },
+        {
+            "name": "view/DatosSolicitud.view.xml"
+        },
+        {
+            "name": "view/Detalle.view.xml"
+        },
+        {
+            "name": "view/DetalleSolicitud.view.xml"
+        },
+        {
+            "name": "view/ListaPuestos.view.xml"
+        },
+        {
+            "name": "view/ListaSolicitudes.view.xml"
+        },
+        {
+            "name": "view/fragment/CreateDetalle.fragment.xml"
+        },
+        {
+            "name": "view/fragment/DialogoOrdenacion.fragment.xml"
+        },
+        {
+            "name": "view/fragment/DialogoPassword.fragment.xml"
+        },
+        {
+            "name": "view/fragment/DisplayDetalle.fragment.xml"
+        }
+    ]
+}

@@ -1,0 +1,17 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="es.cac.bolsa.BolsaTrabajoPublicada0920.controller.Detalle">
+
+			<Page title="Detalle" showNavButton="true">
+				<content>
+				    <sap.ui.layout.form:SimpleForm editable="true" layout="ResponsiveGridLayout" xmlns:sap.ui.layout.form="sap.ui.layout.form" id="form0">
+				        <sap.ui.layout.form:content>
+				            <core:Title text="{Apellido1} {Apellido2},{Nombre}" id="title0"/>
+				            <Label text="Label 1" id="label0"/>
+				            <Input width="100%" id="input0"/>
+				            <Input width="100%" id="input1"/>
+				            <Label text="Label 2" id="label1"/>
+				            <Input width="100%" id="input2"/></sap.ui.layout.form:content>
+				    </sap.ui.layout.form:SimpleForm>
+				</content>
+			</Page>
+
+</mvc:View>

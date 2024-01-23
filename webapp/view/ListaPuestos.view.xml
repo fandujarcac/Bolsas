@@ -1,0 +1,40 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml" controllerName="es.cac.bolsa.BolsaTrabajoPublicada0920.controller.ListaPuestos">
+	<Page title="Title">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Image src="https://www.cac.es/.resources/cac-module/img/cac_logo_2018.png" height="100px" id="image2" width="auto"/>
+				</contentLeft>
+				<contentMiddle>
+					<Label text="Bolsas de Trabajo CACSA" design="Bold"/>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<subHeader>
+		<!--	<Toolbar>
+				<Label text="Seleccione Bolsa de Trabajo" width="100%" id="label0"/>
+				<Select xmlns="sap.m" id="selectBolsa" items="{miModeloBolsas>/}" change="ElegirBolsa">
+					<items>
+						<core:Item xmlns:core="sap.ui.core" key="{miModeloBolsas>Bolsa}" text="{miModeloBolsas>TextoBolsa}"/>
+					</items>
+				</Select>
+				<Label text="Seleccione Puesto de Trabajo" width="100%" id="label1"/>
+				<Select xmlns="sap.m" id="selectPuesto" items="{miModeloPuestos>/}">
+					<items >
+						<core:Item xmlns:core="sap.ui.core" key="{miModeloPuestos>Bolsa}{miModeloPuestos>Puesto}" text="{miModeloPuestos>TextoPuesto}"/>
+					</items>
+				</Select>
+			</Toolbar>
+		-->
+		</subHeader>
+	<content>
+	    <List noDataText="No hay datos seleccionados" items="{path:'/ZayudaPuestoBolsaSet',sorter:[{path:'Bolsa',descending:false, group: '.grouper'},{path:'TextoPuesto',descending:false}],groupHeaderFactory: '.getGroupHeader'}" id="list2" headerText="Puestos de trabajo disponibles">
+	        <items>
+	            <StandardListItem xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" type="Navigation" title="{Puesto}" description="{TextoPuesto}" icon="sap-icon://employee-pane" id="item2" fieldGroupIds="{Bolsa}" unread="true" press="onNavegarListaSolicitudes"/>
+	        </items>
+	    </List>
+	    
+	    
+	</content>
+	</Page>
+</mvc:View>

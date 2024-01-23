@@ -1,0 +1,66 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="es.cac.bolsa.BolsaTrabajoPublicada0920.controller.ListaSolicitudes">
+	<Page title="Bolsas de Trabajo CACSA" id="idPageListaSolicitudes" class="sapUiContentPadding" showNavButton="true">
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Image src="https://www.cac.es/.resources/cac-module/img/cac_logo_2018.png" height="100px" id="image2" width="auto"/>
+				</contentLeft>
+				<contentMiddle>
+				<Label text="Bolsas de Trabajo CACSA"  design="Bold"/>
+			    </contentMiddle>
+				<contentRight>
+					<Button text="Action" type="Accept"></Button>
+				</contentRight>
+			</Bar>
+		</customHeader>
+		<subHeader>
+			<Toolbar>
+				<SearchField xmlns="sap.m" placeholder="Buscar por ..." id="IdSearchCliente1" liveChange="onSearch" search="onSearch"/>
+				<Button xmlns="sap.m" tooltip="Ordenar" id="IdButtonOrdenar11" icon="sap-icon://sort" press=".openDialogoOrdenar"></Button>
+			</Toolbar>
+		</subHeader>
+		<content>
+			<ObjectHeader xmlns="sap.m" title="Lista Solicitantes" id="header0" condensed="true"
+				icon="https://www.cac.es/.resources/cac-module/img/cac_logo_2018.png">
+				<statuses>
+					<ObjectStatus text="2019" state="Success" id="status0_1557474533311"/>
+				</statuses>
+			</ObjectHeader>
+			<Image src="https://www.cac.es/.resources/cac-module/img/cac_logo_2018.png" height="100px" id="image1" width="auto"/>
+			<!-- <Button xmlns="sap.m" text="Solicitantes" id="button0" activeIcon="sap-icon://account" icon="sap-icon://account" press="action" xmlns:action="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" action:wiring="\{'press':\{'navigation':\{'routeName':'Solicitantes'\}\}\}"/> -->
+			<List noDataText="Drop list items here" items="{miModeloSolicitantes>/}" id="idMiLista">
+				<items>
+					<ObjectListItem xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" type="Navigation"
+						title="{miModeloSolicitantes>Apellido1} {miModeloSolicitantes&gt;Apellido2}" number="{miModeloSolicitantes>PuntuacionTotal}"
+						intro="{miModeloSolicitantes>Nombre}" id="ObjectList1" activeIcon="sap-icon://employee" selected="true" press="onDetailPress">
+						<attributes>
+							<ObjectAttribute text="Reg: {miModeloSolicitantes>Ejercicio} {miModeloSolicitantes&gt;NumOrden}" id="attribute0"/>
+						</attributes>
+						<firstStatus>
+							<ObjectStatus text="{miModeloSolicitantes>TextoBolsa}" id="status0"/>
+						</firstStatus>
+						<secondStatus>
+							<ObjectStatus text="{miModeloSolicitantes>TextoPuesto}" id="status1"/>
+						</secondStatus>
+					</ObjectListItem>
+				</items>
+				<!--<headerToolbar>
+					<Toolbar width="100%" id="toolbar1">
+						<content>
+							<SearchField xmlns="sap.m" placeholder="Buscar por ..." id="IdSearchCliente" liveChange="onSearch" search="onSearch"/>
+							<Button xmlns="sap.m" tooltip="Ordenar" id="IdButtonOrdenar" icon="sap-icon://sort" press=".openDialogoOrdenar"/>
+						</content>
+					</Toolbar>
+				</headerToolbar> -->
+			</List>
+			<!--<List noDataText="Drop list items here" id="list1" items="{miModeloSolicitantes>/}" mode="SingleSelectMaster" selectionChange=".onPressItem">	
+				<items>
+					<StandardListItem title="{miModeloSolicitantes>Apellido1} {miModeloSolicitantes>Apellido2}, {miModeloSolicitantes>Nombre}"
+						description="Reg: {miModeloSolicitantes>Ejercicio} {miModeloSolicitantes>NumOrden}" icon="sap-icon://employee"
+						activeIcon="sap-icon://employee"/>
+				</items>
+			</List>-->
+		</content>
+	</Page>
+</mvc:View>

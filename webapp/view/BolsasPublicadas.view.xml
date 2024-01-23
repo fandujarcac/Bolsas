@@ -1,0 +1,27 @@
+<mvc:View xmlns:core="sap.ui.core" xmlns:mvc="sap.ui.core.mvc" xmlns="sap.m" xmlns:html="http://www.w3.org/1999/xhtml"
+	controllerName="es.cac.bolsa.BolsaTrabajoPublicada0920.controller.BolsasPublicadas">
+	<Page>
+		<customHeader>
+			<Bar>
+				<contentLeft>
+					<Button xmlns="sap.m" id="button0" icon="sap-icon://nav-back" press="onNavBack"/>
+					<Image src="https://www.cac.es/.resources/cac-module/img/cac_logo_2018.png" height="100px" id="image2" width="auto"/>
+				</contentLeft>
+				<contentMiddle>
+					<Label text="Bolsa de Trabajo CACSA" design="Bold" id="idLabelBar"/>
+				</contentMiddle>
+			</Bar>
+		</customHeader>
+		<content>
+			<List xmlns:cd="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" noDataText="Drop list items here" id="list1"
+				headerText="Histórico de Bolsas publicadas"
+				items="{path:'/ZBolsas_PublicadasSet',sorter:[{path:'Bolsa',descending:false, group: '.grouper'},{path:'TextoPuesto',descending:false, group: true},{path:'FechaPublic',descending:false,group:true}],groupHeaderFactory: '.getGroupHeader'}">
+				<items>
+					<StandardListItem type="Navigation" title="{Bolsa}/{Puesto} {TextoPuesto} " description="{Descripcion}" icon="sap-icon://newspaper"
+						id="item1" info="Publicado el {path: 'FechaPublic', type: 'sap.ui.model.type.Date', formatOptions: {style: 'medium'}}" infoState="Success"
+						press="onNavegarListaSolicitudes"/>
+				</items>
+			</List>
+		</content>
+	</Page>
+</mvc:View>
